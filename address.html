@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #top {
+        z-index: 100;
+        position: fixed;
+        width: 1365px;
+        height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: #efb59e;
+        font-size: 18px;
+        list-style: none;
+        float: left;
+      }
+      #top0{
+        display: flex;
+        gap: 0 30px;
+        color: #000;
+      }
+      #top1 {
+        text-align: center;
+        display: flex;
+        gap: 0 39px;
+        padding-right: 0px;
+      }
+      #top1 div a {
+        color: #000;
+        display: block;
+        list-style: none;
+        float: left;
+        text-decoration: none;
+      }
+      #top2 {
+        text-align: center;
+        display: flex;
+        padding-right: 20px;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0 12px;
+      }
+
+      * {
+        padding: 0px;
+        margin: 0px;
+        box-sizing: border-box;
+      }
+      #screen {
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+      }
+
+      #modal {
+       
+       top: 0;
+       bottom: 0;
+       left: 0;
+       right: 0;
+        position: fixed ;
+   
+        background-color: orange;
+        animation: modalShow 0.5s;
+        display: none;
+      }
+
+      @keyframes modalShow {
+        0% {
+          transform: translateY(-100%);
+        }
+        100% {
+          transform: translateY(0%);
+        }
+      }
+
+      #closemodal {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+      }
+
+      #modal.show {
+        display: block;
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div>
+      <div></div>
+      <div>
+          <div></div>
+          <div></div>
+      </div>
+    </div>
+    <div id="top">
+      <div>1</div>
+         <div id="top0">
+            <div id="top1" style="font-size: 15px">
+                <div><a href="/home.html" title="HOME">HOME</a></div>
+                <div><a href="/about.html" title="HOME">ABOUT</a></div>
+                <div><a href="/team.html" title="HOME">TEAM</a></div>
+                <div><a href="/services.html" title="HOME">SERVICES</a></div>
+                <div><a href="/contact.html" title="HOME">CONTACT</a></div>
+            </div>
+            <div id="top2" style="font-size: 15px; gap: 0 25px">
+              <div id="screen">
+                
+                  <button onclick="toggleModal()">
+                    <i class="fa-solid fa-location-arrow"></i>
+                  </button>
+                </div>
+                <div id="modal">
+                  modal<button onclick="toggleModal()" id="closemodal">x</button>
+                        <div id="name">
+                          <div>1</div>
+                          <div>2</div>
+                          <div>3</div>
+                        </div>
+                      </div>
+                  </div>
+                  <script>
+                    function toggleModal() {
+                      const modal = document.querySelector("#modal");
+              
+                      modal.classList.toggle("show");
+                    }
+                  </script>
+         
+          <div><a href="/share.html" title="HOME"><i class="fas fa-share-alt"></i></a></div>
+          <div><a href="/email.html" title="HOME"><i class="fa-sharp fa-solid fa-envelope"></i></a></div>
+          <div><a href="/phone.html" title="HOME"><i class="fa-solid fa-phone"></i></a></div>
+        </div>
+        </div>
+        </div>
+    
+  </body>
+</html>

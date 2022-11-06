@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Silco</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"
+    />
+    <!-- Link Swiper's CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+    ></script>
+
+    <style>
+        body{
+            align-items: center;
+        }
+      .swiper {
+        width: 30%;
+        height: 30%;
+      }
+
+      .swiper-slide {
+        text-align: center;
+        font-size: 7px;
+        background: #fff;
+
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+      }
+
+      .swiper-slide img {
+        display: block;
+        width: 280px;
+        height: 375px;
+        object-fit: cover;
+      }
+      * {
+        padding: 0px;
+        margin: 0px;
+        box-sizing: border-box;
+      }
+      #body {
+        width: auto;
+        height: auto;
+        margin: 0 auto;
+      }
+      #top {
+        z-index: 100;
+        position: fixed;
+        width: 100%;
+        height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: #efb59e;
+        font-size: 18px;
+
+        list-style: none;
+        float: left;
+      }
+      #top1 {
+        font-family: "Times New Roman", Times, serif;
+        text-align: center;
+        display: flex;
+        gap: 0 39px;
+        padding-right: 0px;
+      }
+      #top1 div a {
+        color: #000;
+        display: block;
+        list-style: none;
+        float: left;
+        text-decoration: none;
+      }
+      #top2 {
+        font-family: "Arial", Times, serif;
+        text-align: center;
+        display: flex;
+        padding-right: 20px;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0 12px;
+      }
+      #banner {
+        padding-top: 150px;
+        justify-items: center;
+        text-align: center;
+        height: 550px;
+        background-image: url("image/anh10.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        object-fit: cover;
+        color: white;
+      }
+      #banner1 {
+        font-family: "Arial", Times, Sans-serif;
+        display: flex;
+        justify-content: center;
+        border-top: 8px solid white;
+        padding: 30px 0;
+        margin: 0 360px;
+        font-size: 95px;
+        font-weight: 700;
+      }
+      #banner2 {
+        font-family: "Arial", Times, Sans-serif;
+        display: flex;
+        justify-content: center;
+        border-top: 8px solid white;
+        padding: 30px 0;
+        margin: 0 360px;
+        font-size: 30px;
+      }
+      #mid {
+        background-color: #fff;
+        height: 1000px;
+      }
+      #mid1 {
+        font-size: 40px;
+        padding-top: 100px;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        padding-bottom: 10px;
+        border-bottom: 4px solid #b2583a;
+        margin: 0 550px;
+      }
+      #mid2 {
+        padding-top: 30px;
+        display: flex;
+      }
+      #mid2 div1 {
+        padding-top: 20px;
+        font-size: 18px;
+        padding-left: 100px;
+        width: 65%;
+      }
+      #midtobe {
+        height: 800px;
+        justify-content: center;
+        background-color: #ebebeb;
+        text-align: center;
+      }
+      #midtobe1 {
+        font-size: 40px;
+        padding-top: 100px;
+        padding-bottom: 10px;
+        border-bottom: 4px solid #b2583a;
+        margin: 0 550px;
+      }
+      #midtobe2 {
+        padding-top: 20px;
+        justify-content: center;
+        display: flex;
+      }
+      #midtobe2 div {
+        width: 260px;
+        margin: 0 20px;
+      }
+      #midtobe2 div img {
+        width: 260px;
+        height: 260px;
+      }
+      #midtobe2 div div {
+        margin: 0 15px;
+        padding-top: 15px;
+      }
+      #bot {
+        height: 800px;
+        justify-content: center;
+        background-color: #fff;
+        text-align: center;
+      }
+      #bot1 {
+        font-size: 40px;
+
+        padding-top: 100px;
+        padding-bottom: 10px;
+        border-bottom: 4px solid #b2583a;
+        margin: 0 550px;
+      }
+      #bot2 {
+        padding: 20px 160px;
+        justify-content: space-between;
+        display: flex;
+      }
+      #bot2 div {
+        width: 300px;
+        padding: 10px 0;
+      }
+      #bot2 div img {
+        width: 130px;
+        height: 130px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+      #bot2 div div {
+        margin: 0 15px;
+        padding-top: 15px;
+        font-size: 18px;
+      }
+      .button {
+        background-color: #ac6c53;
+        border: none;
+        color: white;
+        padding: 10px 33px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+      }
+      #spot {
+        height: 700px;
+        background-color: #ebebeb;
+      }
+      #spot1 {
+        font-size: 40px;
+
+        padding-top: 100px;
+        padding-bottom: 10px;
+        border-bottom: 4px solid #b2583a;
+        margin: 0 550px;
+        justify-content: center;
+        display: flex;
+      }
+      #spot2 {
+        padding: 50px 0;
+        justify-content: space-between;
+        display: flex;
+      }
+      #spot2 div {
+        width: 300px;
+        padding: 10px 50px;
+      }
+      .submit {
+        background-color: #ac6c53;
+        border: none;
+        color: white;
+        height: 40px;
+        width: 200px;
+        font-size: 18px;
+        text-align: center;
+        text-decoration: none;
+        display: flex;
+        cursor: pointer;
+        justify-content: center;
+        align-items: center;
+      }
+      #spot3 {
+        display: flex;
+        padding-left: 60px;
+      }
+      #spt {
+        font-size: 20px;
+        line-height: 3;
+      }
+
+      #sp div {
+        font-size: 20px;
+        align-items: center;
+        gap: 0 20px;
+        display: flex;
+        line-height: 2;
+      }
+      #bottom {
+        height: 200px;
+        background-color: #333333;
+        color: #fff;
+      }
+      #bottom1 {
+        align-items: center;
+        display: flex;
+        gap: 0 50px;
+        justify-content: center;
+        line-height: 60px;
+        padding-top: 20px;
+      }
+      #bottom2 {
+        justify-content: center;
+        text-align: center;
+        line-height: 20px;
+      }
+      /* 
+      #modal-window {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 9999;
+        background-color: rgba(0, 0, 0, 0.8); 
+        visibility: hidden;
+        display: table;
+      }
+      #modal-window.active {
+        visibility: visible;
+      }
+      .modal-close {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        display: block;
+        font-size: 40px;
+        line-height: 30px;
+        color: #fff;
+        text-align: right;
+        padding: 20px;
+        cursor: pointer;
+        transition: 0.2s;
+        -webkit-transition: 0.2s;
+        transition-delay: 0.2s;
+        -webkit-transition-delay: 0.2s;
+        transform: translateY(-20px);
+        -webkit-transform: translateY(-20px);
+      }
+      #modal-window.active .modal-close {
+        transform: translateY(0px);
+        -webkit-transform: translateY(0px);
+      }
+      .align-content {
+        display: table-cell;
+        vertical-align: middle;
+      }
+      #modal-window .content {
+        position: relative;
+        max-width: 90%; 
+        color: #fff;
+        height: 500px;
+        background-color: black;
+        margin: 0 auto;
+        padding: 100px 30px;
+       
+        opacity: 0;
+        transition: 0.2s;
+        -webkit-transition: 0.2s;
+        transform: translateY(20px);
+        -webkit-transform: translateY(20px);
+        justify-content: center;
+        text-align: center;
+      } */
+      /* #modal-window.active .content {
+        opacity: 1;
+        transform: translateY(0px);
+        -webkit-transform: translateY(0px);
+      } */
+      .content1 {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        line-height: 3cm;
+        gap: 0 20px;
+        font-size: 50px;
+        lighting-color: #b2583a;
+      }
+      .content2 {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        font-size: 50px;
+        gap: 0 40px;
+      }
+      .content2 div {
+        width: 100px;
+        height: 100px;
+        border: 3px solid white;
+        padding: 50px;
+        border-radius: 100%;
+        justify-content: center;
+        display: flex;
+        align-items: center;
+      }
+
+      #screen {
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+      }
+
+      #modal {
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        position: fixed;
+        color: white;
+        background-color: black;
+        animation: modalShow 0.5s;
+        display: none;
+      }
+
+      @keyframes modalShow {
+        0% {
+          transform: translateY(-100%);
+        }
+        100% {
+          transform: translateY(0%);
+        }
+      }
+
+      #closemodal {
+        position: absolute;
+        right: 30px;
+        top: 20px;
+        font-size: 40px;
+
+        cursor: pointer;
+      }
+
+      #modal.show {
+        display: block;
+      }
+      #name {
+        font-size: 50px;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+        gap: 0 40px;
+        height: 100%;
+      }
+
+      #screen1 {
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+      }
+
+      #modal1 {
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        position: fixed;
+        color: white;
+        background-color: black;
+        animation: modalShow 0.5s;
+        display: none;
+      }
+
+      @keyframes modalShow {
+        0% {
+          transform: translateY(-100%);
+        }
+        100% {
+          transform: translateY(0%);
+        }
+      }
+
+      #closemodal1 {
+        position: absolute;
+        right: 30px;
+        top: 20px;
+        font-size: 40px;
+
+        cursor: pointer;
+      }
+
+      #modal1.show1 {
+        display: block;
+      }
+      #name1 {
+        font-size: 50px;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+        gap: 0 40px;
+        height: 100%;
+      }
+      .icon {
+        width: 100px;
+        height: 100px;
+        border: 3px solid white;
+        padding: 50px;
+        border-radius: 100%;
+        justify-content: center;
+        display: flex;
+        align-items: center;
+      }
+
+      #modal2 {
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        position: fixed;
+        color: white;
+        background-color: black;
+        animation: modalShow 0.5s;
+        display: none;
+      }
+
+      @keyframes modalShow {
+        0% {
+          transform: translateY(-100%);
+        }
+        100% {
+          transform: translateY(0%);
+        }
+      }
+
+      #closemodal2 {
+        position: absolute;
+        right: 30px;
+        top: 20px;
+        font-size: 40px;
+
+        cursor: pointer;
+      }
+
+      #modal2.show2 {
+        display: block;
+      }
+      #name2 {
+        padding: 60px 275px;
+        font-size: 20px;
+        line-height: 1.3cm;
+        gap: 0 40px;
+        height: 100%;
+        text-align: left;
+      }
+      #table {
+        display: flex;
+        gap: 0 75px;
+        justify-content: space-between;
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://kit-pro.fontawesome.com/releases/v5.15.4/css/pro.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    />
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/emailjs-com@2.4.0/dist/email.min.js"
+    ></script>
+  </head>
+  <body>
+    <div id="top">
+      <div>1</div>
+      <div id="top1" style="font-size: 15px">
+        <div><a href="/silco.html" title="HOME">HOME</a></div>
+        <div><a href="/about.html" title="about">ABOUT</a></div>
+        <div><a href="/services.html" title="services">SERVICES</a></div>
+        <div><a href="/team.html" title="team">TEAM</a></div>
+
+        <div><a href="/contact.html" title="HOME">CONTACT</a></div>
+        <div id="top2" style="font-size: 15px; gap: 0 25px">
+         
+
+          <div id="screen">
+            <div onclick="toggleModal()">
+              <i class="fa-solid fa-location-arrow"></i>
+            </div>
+            <div id="modal">
+              <div onclick="toggleModal()" id="closemodal">&#10006;</div>
+              <div id="name">
+                <div class="content">
+                  <div class="content1">
+                    <div><i class="fa-solid fa-location-arrow"></i></div>
+                    <div>Số 4 Hanoi,Vietnam</div>
+                  </div>
+                  <div class="content2">
+                    <div><i class="fas fa-globe-asia"></i></div>
+                    <div><i class="far fa-map"></i></div>
+                    <div><i class="fal fa-map-marker-smile"></i></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <script>
+            function toggleModal() {
+              const modal = document.querySelector("#modal");
+
+              modal.classList.toggle("show");
+            }
+          </script>
+
+          <div id="screen1">
+            <div onclick="toggleModal1()">
+              <i class="fas fa-share-alt"></i>
+            </div>
+            <div id="modal1">
+              <div onclick="toggleModal1()" id="closemodal">&#10006;</div>
+              <div id="name1">
+                <div class="icon"><i class="fa-brands fa-facebook"></i></div>
+                <div class="icon"><i class="fa-brands fa-twitter"></i></div>
+              </div>
+            </div>
+          </div>
+
+          <script>
+            function toggleModal1() {
+              const modal1 = document.querySelector("#modal1");
+
+              modal1.classList.toggle("show1");
+            }
+          </script>
+
+          <div id="screen2">
+            <div onclick="toggleModal2()">
+              <i class="fa-sharp fa-solid fa-envelope"></i>
+            </div>
+            <div id="modal2">
+              <div onclick="toggleModal2()" id="closemodal">&#10006;</div>
+              <div id="name2">
+                <div>Contact Us</div>
+                <div>
+                  Fill out the form or send a direct email to:
+                  Newsoco2021@gmail.com
+                </div>
+                <div id="table">
+                  <div class="fullname">
+                    <div class="fullname1">Full Name</div>
+                    <div class="fullname2">
+                      <input
+                        id="fullnamea"
+                        type="text"
+                        placeholder="Full name"
+                        style="
+                          height: 40px;
+                          width: 350px;
+                          font-size: 18px;
+                          padding: 20px;
+                        "
+                      />
+                    </div>
+                  </div>
+                  <div class="emailadd">
+                    <div class="emailadd1">Email Address</div>
+                    <div class="emailadd2">
+                      <input
+                        id="emailadda"
+                        type="text"
+                        placeholder="Email address"
+                        style="
+                          height: 40px;
+                          width: 350px;
+                          font-size: 18px;
+                          padding: 20px;
+                        "
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div class="description">
+                    <div class="description1">Description</div>
+                    <div class="description2">
+                      <textarea
+                        id="descriptiona"
+                        type="text"
+                        placeholder="Description"
+                        style="height: 140px; width: 100%; font-size: 18px"
+                      ></textarea>
+                    </div>
+                  </div>
+                </div>
+
+                <div>
+                  <button
+                    href="#"
+                    class="submit"
+                    style="width: 100%"
+                    onclick="sendtn()"
+                  >
+                    SEND
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <script>
+            function toggleModal2() {
+              const modal2 = document.querySelector("#modal2");
+              modal2.classList.toggle("show2");
+            }
+          </script>
+          <script>
+            (function () {
+              emailjs.init("nuQGF_xpg5hYZkcr1");
+            })();
+
+            function sendtn() {
+              const fullname = document.querySelector("#fullnamea");
+              const emailadd = document.querySelector("#emailadda");
+              const description = document.querySelector("#descriptiona");
+
+              if (fullname.value === "") {
+                fullname.focus();
+                fullname.placeholder = "Tôi nên gọi bạn bằng...";
+                return;
+              }
+              if (emailadd.value === "" || !emailadd.value.includes("@")) {
+                emailadd.focus();
+                emailadd.placeholder = "Tôi sẽ trả lời bạn qua email...";
+                return;
+              }
+              if (description.value === "") {
+                description.focus();
+                description.placeholder = "Đừng bỏ đi mà không nói lời nào 😥";
+                return;
+              }
+              var params1 = {
+                fullname: fullname.value || "nothing",
+                emailadd: emailadd.value || "nothing",
+                description: description.value || "nothing",
+              };
+
+              const serviceID = "service_kvqiuli";
+              const templateID = "template_0jksueg";
+
+              emailjs
+                .send(serviceID, templateID, params1)
+                .then((res) => {
+                  console.log(res);
+                  fullname.value = "";
+                  emailadd.value = "";
+                  description.value = "";
+                })
+                .catch((err) => console.log(err));
+            }
+          </script>
+
+          <div>
+            <a href="/phone.html" title="HOME"
+              ><i class="fa-solid fa-phone"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="banner">
+      <div id="banner1">SILCO M&E</div>
+      <div id="banner2">Chất lượng - Chuyên nghiệp - Khác biệt</div>
+      <div id="phone" style="font-size: 30px">Hotline : 0969.890.605</div>
+    </div>
+    
+    <div id="spot">
+        <div id="spot1">CONTACT</div>
+        <div id="spot2">
+          <div>
+            <input
+              id="nameuser"
+              type="text"
+              placeholder="Name"
+              style="height: 40px; width: 250px; font-size: 18px; padding: 20px"
+            />
+          </div>
+          <div>
+            <input
+              id="phoneuser"
+              type="text"
+              placeholder="Phone"
+              style="height: 40px; width: 250px; font-size: 18px; padding: 20px"
+            />
+          </div>
+          <div>
+            <input
+              id="emailuser"
+              type="text"
+              placeholder="Email"
+              style="height: 40px; width: 250px; font-size: 18px; padding: 20px"
+            />
+          </div>
+          <div>
+            <button href="#" class="submit" onclick="guiEmail()">
+              CONTACT US
+            </button>
+          </div>
+        </div>
+        <div id="spot3">
+          <div style="width: 30%">
+            <div id="spt">Hanoi,Vietnam</div>
+            <div id="sp">
+              <div>
+                <div><i class="fa-solid fa-phone"></i></div>
+                <div>0395402554</div>
+              </div>
+              <div>
+                <div><i class="fa-solid fa-envelope"></i></div>
+                <div>Newsoco2021@gmail.com</div>
+              </div>
+            </div>
+          </div>
+  
+          <div style="width: 70%; padding: 0 150px">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d14897.047134379984!2d105.8172995!3d21.0222089!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1svi!2s!4v1666282076168!5m2!1svi!2s"
+              width="600"
+              height="350"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+        </div>
+      </div>
+      <script>
+        (function () {
+          emailjs.init("nuQGF_xpg5hYZkcr1");
+        })();
+  
+        function guiEmail() {
+          const name = document.querySelector("#nameuser");
+          const phone = document.querySelector("#phoneuser");
+          const email = document.querySelector("#emailuser");
+  
+          if (name.value === "") {
+            name.focus();
+            name.placeholder = "Tôi nên gọi bạn bằng...";
+            return;
+          }
+          if (phone.value === "") {
+            phone.focus();
+            phone.placeholder = "Đừng bỏ đi mà không nói lời nào 😥";
+            return;
+          }
+          if (email.value === "" || !email.value.includes("@")) {
+            email.focus();
+            email.placeholder = "Tôi sẽ trả lời bạn qua email...";
+            return;
+          }
+          var params = {
+            name: name.value || "nothing",
+            phone: phone.value || "nothing",
+            email: email.value || "nothing",
+          };
+  
+          const serviceID = "service_ogz9a9f";
+          const templateID = "template_auk6bde";
+  
+          emailjs
+            .send(serviceID, templateID, params)
+            .then((res) => {
+              console.log(res);
+              name.value = "";
+              phone.value = "";
+              email.value = "";
+            })
+            .catch((err) => console.log(err));
+        }
+      </script>
+<div id="bottom">
+  <div id="bottom1">
+    <div>Home</div>
+    <div>About</div>
+    <div>Team</div>
+    <div>Services</div>
+    <div>Contact</div>
+  </div>
+  <div id="bottom2">
+    <div>Copyright © 2022 All rights reserved - Silco</div>
+    <div>Powered By SITE123 - Website maker</div>
+  </div>
+</div>
